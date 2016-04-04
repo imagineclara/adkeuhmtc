@@ -292,7 +292,6 @@
                                     <a href="<?php echo base_url(); ?>daftar_keluar_b">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
@@ -307,7 +306,6 @@
                                     <a href="<?php echo base_url(); ?>surat_keluar_b">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="tables"><i class="fa fa-table fa-fw"></i> Tables</a>
@@ -405,30 +403,13 @@
                                             <td><?php echo $row->tujuan; ?></td>
                                             <td><?php echo $row->subjek; ?></td>
                                             <td><?php echo $row->tanggal_acara; ?></td>
+                                            <td><button>Ubah</button><button>Hapus</button></td> 
                                             
                                         </tr>
                                     <?php 
                                             $i++;
                                             } 
                                         ?>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

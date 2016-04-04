@@ -14,7 +14,14 @@ class m_surat extends CI_Model {
     }
     function insertSurat_masuk($tanggal_masuk, $no_surat, $tujuan, $subjek, $tanggal_acara)
     {
-        $this->db->query("insert into surat_masuk values($tanggal_masuk','$no_surat','$tujuan','$tanggal_acara')");
+        $data = array(
+            'tanggal_masuk' => $tanggal_masuk,
+            'no_surat'      => $no_surat,
+            'tujuan'        => $tujuan,
+            'subjek'        => $subjek,
+            'tanggal_acara' => $tanggal_acara
+            );
+        $this->db->insert('surat_masuk',$data);
         // $this->db->query("update user set no_telp = '$no' where nrp_user = '$nrp'");
     }
 }

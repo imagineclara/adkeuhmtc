@@ -15,7 +15,8 @@ class surat_masuk extends CI_Controller {
 		// $data['surat_masuk'] = $this->madmin->getSurat_masuk();
 		$this->load->view('surat_masuk');
 	}
-	function input_surat_masuk()
+
+	public function input_surat_masuk()
 	{
 		//$no = $_POST['no'];
 		$tanggal_masuk = $_POST['tanggal_masuk'];
@@ -23,7 +24,6 @@ class surat_masuk extends CI_Controller {
 		$tujuan = $_POST['tujuan'];
 		$subjek = $_POST['subjek'];
 		$tanggal_acara = $_POST['tanggal_acara'];
-
 		$this->m_surat->insertSurat_masuk($tanggal_masuk, $no_surat, $tujuan, $subjek, $tanggal_acara);
 		// $this->
 		redirect('surat_masuk');
