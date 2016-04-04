@@ -384,13 +384,13 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form method="post" action="input_surat_masuk">
                                         <div class="form-group">
                                             <label>Tanggal Masuk Surat</label>
-                                            <!-- <input class="form-control" placeholder="Enter text"> -->
-                                            <form>
+                                            <input class="form-control" placeholder="<DD-BULAN-TAHUN">
+                                            <!-- <form>
                                                 <input class="form-control" type="date" name="bday" max="2016-12-31"><br>
-                                            </form>
+                                            </form> -->
                                         </div>
                                         <div class="form-group">
                                             <label>Nomor Surat</label>
@@ -406,10 +406,10 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Tanggal Acara</label>
-                                            <!-- <input class="form-control" placeholder="Enter text"> -->
-                                            <form>
+                                            <input class="form-control" placeholder="DD-BULAN-TAHUN">
+                                            <!-- <form>
                                                 <input class="form-control" type="date" name="bday" max="2016-12-31"><br>
-                                            </form>
+                                            </form> -->
                                         </div>
                                         <button type="submit" class="btn btn-default">Submit Button</button>
                                     </form>

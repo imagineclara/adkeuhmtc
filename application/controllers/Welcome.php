@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		$this->load->model('');
+		// $this->load->library('session');
+		$this->load->model('m_surat');
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +26,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+		$data['surat_masuk'] = $this->m_surat->getSurat_masuk();
+		$this->load->view('index',$data);
 	}
 }

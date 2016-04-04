@@ -390,22 +390,33 @@
                                             <th>Tujuan Surat</th>
                                             <th>Subject</th>
                                             <th>Tanggal Acara</th>
+                                            <th>Pengaturan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                            $i=1;
+                                            foreach ($surat_masuk->result() as $row) {
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
+                                            <td><?php echo $i;?></td>
+                                            <td><?php echo $row->tanggal_masuk; ?></td>
+                                            <td><?php echo $row->no_surat; ?></td>
+                                            <td><?php echo $row->tujuan; ?></td>
+                                            <td><?php echo $row->subjek; ?></td>
+                                            <td><?php echo $row->tanggal_acara; ?></td>
+                                            
                                         </tr>
+                                    <?php 
+                                            $i++;
+                                            } 
+                                        ?>
                                         <tr>
                                             <td>2</td>
                                             <td>Jacob</td>
                                             <td>Thornton</td>
                                             <td>@fat</td>
+                                            <td>@mdo</td>
                                             <td>@mdo</td>
                                             <td>@mdo</td>
                                         </tr>
@@ -414,6 +425,7 @@
                                             <td>Larry</td>
                                             <td>the Bird</td>
                                             <td>@twitter</td>
+                                            <td>@mdo</td>
                                             <td>@mdo</td>
                                             <td>@mdo</td>
                                         </tr>
