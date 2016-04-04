@@ -280,34 +280,32 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="active" href="#"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
+                            <a class="active" href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="daftar_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>daftar_keluar_a">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="daftar_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>daftar_keluar_b">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="surat_masuk">Surat Masuk</a>
+                                    <a href="<?php echo base_url(); ?>surat_masuk">Surat Masuk</a>
                                 </li>
                                 <li>
-                                    <a href="surat_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat_keluar_a">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="surat_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat_keluar_b">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="tables"><i class="fa fa-table fa-fw"></i> Tables</a>
@@ -367,7 +365,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Daftar Surat Masuk HMTC</h1>
+                    <h1 class="page-header">Daftar Surat Keluar Internal HMTC</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -377,7 +375,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Surat Masuk HMTC
+                            Surat Keluar Internal HMTC
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -385,38 +383,31 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal Surat Masuk</th>
+                                            <th>Tanggal Surat</th>
                                             <th>Nomor Surat</th>
                                             <th>Tujuan Surat</th>
                                             <th>Subject</th>
-                                            <th>Tanggal Acara</th>
+                                            <th>Pengaturan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                            $i=1;
+                                            foreach ($surat_keluar_a->result() as $row) {
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
+                                            <td><?php echo $i;?></td>
+                                            <td><?php echo $row->tanggal_surat; ?></td>
+                                            <td><?php echo $row->no_surat; ?></td>
+                                            <td><?php echo $row->tujuan; ?></td>
+                                            <td><?php echo $row->subjek; ?></td>
+                                            <td><button>Ubah</button><button>Hapus</button></td> 
+                                            
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                        </tr>
+                                    <?php 
+                                            $i++;
+                                            } 
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

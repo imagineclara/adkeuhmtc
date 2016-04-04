@@ -400,7 +400,7 @@
                                     <form method="post" action="surat_masuk/input_surat_masuk">
                                         <div class="form-group">
                                             <label>Tanggal Masuk Surat</label>
-                                            <input class="form-control" placeholder="<DD-BULAN-TAHUN" name="tanggal_masuk">
+                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_masuk">
                                             <!-- <form>
                                                 <input class="form-control" type="date" name="bday" max="2016-12-31"><br>
                                             </form> -->

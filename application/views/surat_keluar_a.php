@@ -9,19 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Sisfor Administrasi HMTC</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">Sisfor Administrasi HMTC</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -250,7 +250,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url(); ?>login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -274,19 +274,32 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="<?php echo base_url(); ?>daftar_keluar_a">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="<?php echo base_url(); ?>daftar_keluar_b">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo base_url(); ?>surat_masuk">Surat Masuk</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>surat_keluar_a">Surat Keluar Internal</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>surat_keluar_b">Surat Keluar Eksternal</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
@@ -384,25 +397,23 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form method="post" action="surat_keluar_a/input_surat_keluar_a">
                                         <div class="form-group">
                                             <label>Tanggal Surat</label>
-                                            <!-- <input class="form-control" placeholder="Enter text"> -->
-                                            <form>
-                                                <input class="form-control" type="date" name="bday" max="2016-12-31"><br>
-                                            </form>
+                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_surat">
+                                            <!-- <input class="form-control" type="date" name="tanggal_masuk" max="2016-12-31"><br> -->
                                         </div>
                                         <div class="form-group">
                                             <label>Nomor Surat</label>
-                                            <input class="form-control" placeholder="Nomor surat">
+                                            <input class="form-control" placeholder="Nomor surat" name="no_surat">
                                         </div>
                                         <div class="form-group">
                                             <label>Tujuan Surat</label>
-                                            <input class="form-control" placeholder="Surat untuk">
+                                            <input class="form-control" placeholder="Surat untuk" name="tujuan">
                                         </div>
                                         <div class="form-group">
                                             <label>Subject</label>
-                                            <textarea class="form-control" placeholder="Isi surat..." rows="3"></textarea>
+                                            <textarea class="form-control" placeholder="Isi surat..." rows="3" name="subjek"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default">Submit Button</button>
                                     </form>
