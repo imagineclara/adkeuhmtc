@@ -13,6 +13,7 @@ class daftar_keluar_a extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('daftar_keluar_a');
+		$data['surat_keluar_a'] = $this->m_surat->getSurat_keluar_a();
+		$this->load->view('daftar_keluar_a', $data);
 	}
 }

@@ -12,8 +12,8 @@ class surat_masuk extends CI_Controller {
 
 	public function index()
 	{
-		// $data['surat_masuk'] = $this->madmin->getSurat_masuk();
-		$this->load->view('surat_masuk');
+		$data['surat_masuk'] = $this->m_surat->getSurat_masuk();
+		$this->load->view('surat_masuk', $data);
 	}
 
 	public function input_surat_masuk()
@@ -29,4 +29,5 @@ class surat_masuk extends CI_Controller {
 		redirect('surat_masuk');
 		// $this->load->view('surat_masuk');
 	}
+
 }
