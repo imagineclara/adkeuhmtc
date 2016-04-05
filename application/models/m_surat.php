@@ -12,9 +12,13 @@ class m_surat extends CI_Model {
     {
         return $this->db->query("select * from surat_masuk");
     }
-    public function getSurat_keluar_a()
+    public function getSurat_keluar_internal()
     {
         return $this->db->query("select * from surat_keluar_a");
+    }
+    public function getSurat_keluar_eksternal()
+    {
+        return $this->db->query("select * from surat_keluar_b");
     }
     function insertSurat_masuk($tanggal_masuk, $no_surat, $tujuan, $subjek, $tanggal_acara)
     {

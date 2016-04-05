@@ -280,34 +280,32 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="active" href="#"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
+                            <a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="daftar_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="daftar_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
+                            <a class="active" href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="surat_masuk">Surat Masuk</a>
+                                    <a href="<?php echo base_url(); ?>surat/masuk/tambah">Surat Masuk</a>
                                 </li>
                                 <li>
-                                    <a href="surat_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal/tambah">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="surat_keluar_b">Surat Keluar Eksternal</a>
+                                    <a class="active" href="<?php echo base_url(); ?>surat/keluar/eksternal/tambah">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="tables"><i class="fa fa-table fa-fw"></i> Tables</a>

@@ -286,10 +286,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>daftar_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>daftar_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
                         </li>
@@ -297,13 +297,13 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_masuk">Surat Masuk</a>
+                                    <a href="<?php echo base_url(); ?>surat/masuk/tambah">Surat Masuk</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal/tambah">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal/tambah">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
                         </li>

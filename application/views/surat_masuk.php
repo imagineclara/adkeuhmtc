@@ -280,24 +280,24 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>daftar_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>daftar_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
+                            <a class="active" href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_masuk">Surat Masuk</a>
+                                    <a class="active" href="<?php echo base_url(); ?>surat/masuk/tambah">Surat Masuk</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal/tambah">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal/tambah">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
                         </li>
@@ -305,7 +305,7 @@
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a class="active" href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -397,17 +397,17 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form method="post" action="surat_masuk/input_surat_masuk">
+                                    <form method="post" action="<?php echo base_url(); ?>surat/submit_surat_masuk">
                                         <div class="form-group">
                                             <label>Tanggal Masuk Surat</label>
-                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_masuk">
+                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_masuk" type="datetime-local">
                                             <!-- <form>
                                                 <input class="form-control" type="date" name="bday" max="2016-12-31"><br>
                                             </form> -->
                                         </div>
                                         <div class="form-group">
                                             <label>Nomor Surat</label>
-                                            <input class="form-control" placeholder="Nomor surat" name="no_surat">
+                                            <input class="form-control" placeholder="Nomor surat" name="no_surat" type="number">
                                         </div>
                                         <div class="form-group">
                                             <label>Tujuan Surat</label>
@@ -419,12 +419,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Tanggal Acara</label>
-                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_acara">
+                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_acara" type="datetime-local">
                                             <!-- <form>
                                                 <input class="form-control" type="date" name="bday" max="2016-12-31"><br>
                                             </form> -->
                                         </div>
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="submit" class="btn btn-default">Simpan</button>
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -445,16 +445,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url(); ?>js/sb-admin-2.js"></script>
 
 </body>
 

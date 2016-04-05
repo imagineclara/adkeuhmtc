@@ -5,40 +5,64 @@ class surat extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
-		$this->load->model('');
 		$this->load->library('upload','form_validation');
 		$this->load->model('m_surat');
 	}
 
 	public function index()
 	{
-		$this->load->view('surat_masuk');
-		
-		// if ($fungsi=='tambah') {
-		// 		$this->load->view('surat_masuk');
-		// }
-		// elseif ($fungsi=='report') {
-		// 	# code...
-		// }
-		
-		
-		// $data['surat_keluar_a'] = $this->m_surat->getSurat_keluar_a();
-		// $this->load->view('daftar_keluar_a', $data);
+		$this->masuk('');
 	}
-	public function keluar($fungsi='')
+
+	public function masuk($fungsi)
 	{
-		if ($fungsi=='tambah') {
-				# code...
+		if ($fungsi=='') {
+			$data['surat_masuk'] = $this->m_surat->getSurat_masuk();
+			$this->load->view('index', $data);
 		}
-		elseif ($fungsi=='internal') {
-			# code...
+		elseif ($fungsi=='tambah') {
+			$this->load->view('surat_masuk');
 		}
-		elseif ($fungsi=='eksternal') {
-			# code...
+	}
+	public function keluar($in_eks='', $tambah='')
+	{
+		if ($in_eks=='internal') {
+			if ($tambah=='tambah') {
+				$this->load->view('surat_keluar_internal');
+			}
+			elseif ($tambah == '') {
+				$data['surat_keluar_internal'] = $this->m_surat->getSurat_keluar_internal();
+				$this->load->view('daftar_keluar_internal', $data);
+			}
 		}
-		
-		$data['surat_keluar_a'] = $this->m_surat->getSurat_keluar_a();
-		$this->load->view('daftar_keluar_a', $data);
+		elseif ($in_eks=='eksternal') {
+			if ($tambah=='tambah') {
+				$this->load->view('surat_keluar_eksternal');
+			}
+			elseif ($tambah == '') {
+				$data['surat_keluar_eksternal'] = $this->m_surat->getSurat_keluar_eksternal();
+				$this->load->view('daftar_keluar_eksternal', $data);
+			}
+		}
+	}
+	public function submit_surat_masuk()
+	{
+		//$no = $_POST['no'];
+		$tanggal_masuk = $this->input->post(['tanggal_masuk']);
+		$tanggal_masuk = $_POST['tanggal_masuk'];
+		$no_surat = $_POST['no_surat'];
+		$tujuan = $_POST['tujuan'];
+		$subjek = $_POST['subjek'];
+		$tanggal_acara = $_POST['tanggal_acara'];
+		$state = $this->m_surat->insertSurat_masuk($tanggal_masuk, $no_surat, $tujuan, $subjek, $tanggal_acara);
+		// $this->
+		if ($state) {
+			redirect('surat');
+		}
+		else {
+			redirect('surat');
+		}
+
+		// $this->load->view('surat_masuk');
 	}
 }

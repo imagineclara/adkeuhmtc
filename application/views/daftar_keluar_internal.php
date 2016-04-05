@@ -17,8 +17,14 @@
     <!-- MetisMenu CSS -->
     <link href="<?php echo base_url(); ?>css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- Timeline CSS -->
+    <link href="<?php echo base_url(); ?>css/plugins/timeline.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="<?php echo base_url(); ?>css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="<?php echo base_url(); ?>css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -250,7 +256,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo base_url(); ?>login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -277,13 +283,13 @@
                             <a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
+                            <a class="active" href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>daftar_keluar_a">Surat Keluar Internal</a>
+                                    <a class="active" href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>daftar_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
                         </li>
@@ -291,45 +297,21 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_masuk">Surat Masuk</a>
+                                    <a href="<?php echo base_url(); ?>surat/masuk/tambah">Surat Masuk</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_keluar_a">Surat Keluar Internal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/internal/tambah">Surat Keluar Internal</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat_keluar_b">Surat Keluar Eksternal</a>
+                                    <a href="<?php echo base_url(); ?>surat/keluar/eksternal/tambah">Surat Keluar Eksternal</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a class="active" href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -368,7 +350,7 @@
                                     <a href="blank.html">Blank Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="<?php echo base_url(); ?>login">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -383,69 +365,84 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h1 class="page-header">Daftar Surat Keluar Internal HMTC</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Surat Keluar Internal
+                            Surat Keluar Internal HMTC
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <form method="post" action="surat_keluar_a/input_surat_keluar_a">
-                                        <div class="form-group">
-                                            <label>Tanggal Surat</label>
-                                            <input class="form-control" placeholder="DD-BULAN-TAHUN" name="tanggal_surat">
-                                            <!-- <input class="form-control" type="date" name="tanggal_masuk" max="2016-12-31"><br> -->
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nomor Surat</label>
-                                            <input class="form-control" placeholder="Nomor surat" name="no_surat">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tujuan Surat</label>
-                                            <input class="form-control" placeholder="Surat untuk" name="tujuan">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Subject</label>
-                                            <textarea class="form-control" placeholder="Isi surat..." rows="3" name="subjek"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Tanggal Surat</th>
+                                            <th>Nomor Surat</th>
+                                            <th>Tujuan Surat</th>
+                                            <th>Subject</th>
+                                            <th>Pengaturan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php 
+                                            $i=1;
+                                            foreach ($surat_keluar_internal->result() as $row) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $i;?></td>
+                                            <td><?php echo $row->tanggal_surat; ?></td>
+                                            <td><?php echo $row->no_surat; ?></td>
+                                            <td><?php echo $row->tujuan; ?></td>
+                                            <td><?php echo $row->subjek; ?></td>
+                                            <td><button>Ubah</button><button>Hapus</button></td> 
+                                            
+                                        </tr>
+                                    <?php 
+                                            $i++;
+                                            } 
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
-
+            <!-- <div class="panel-body"> -->
+                <div id=""></div>
+            <!-- </div> -->
     </div>
+    <!-- <div class="co l-lg-8"> -->
+        <div id="morris-bar-chart"></div>
+    <!-- </div> -->
+    <div id="morris-donut-chart"></div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <!-- <script src="<?php echo base_url(); ?>js/plugins/morris/raphael.min.js"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>js/plugins/morris/morris.min.js"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>js/plugins/morris/morris-data.js"></script> -->
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url(); ?>js/sb-admin-2.js"></script>
 
 </body>
 

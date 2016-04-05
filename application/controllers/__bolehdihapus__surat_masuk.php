@@ -5,7 +5,7 @@ class surat_masuk extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('');
+
 		$this->load->library('upload','form_validation');
 		$this->load->model('m_surat');
 	}
@@ -13,7 +13,7 @@ class surat_masuk extends CI_Controller {
 	public function index()
 	{
 		$data['surat_masuk'] = $this->m_surat->getSurat_masuk();
-		$this->load->view('surat_masuk', $data);
+		$this->load->view('index', $data);
 	}
 
 	public function input_surat_masuk()
