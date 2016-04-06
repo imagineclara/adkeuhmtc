@@ -58,7 +58,7 @@ class surat extends CI_Controller {
 		// $this->
 		if ($state) {
 			redirect('surat');
-		}
+		}	
 		else {
 			redirect('surat');
 		}
@@ -66,3 +66,4 @@ class surat extends CI_Controller {
 		// $this->load->view('surat_masuk');
 	}
 }
+//mencoba push ke github
