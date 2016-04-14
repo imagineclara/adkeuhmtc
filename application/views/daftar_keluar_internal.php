@@ -280,13 +280,13 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="active" href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
+                            <a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
+                            <a class="active" href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
+                                    <a class="active" href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>surat/keluar/eksternal">Surat Keluar Eksternal</a>
@@ -308,7 +308,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>inventaris/"><i class="fa fa-table fa-fw"></i> Daftar Inventaris</a>
+                            <a href="tables"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
                             <a href="forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -365,7 +365,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Daftar Surat Masuk HMTC</h1>
+                    <h1 class="page-header">Daftar Surat Keluar Internal HMTC</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -375,7 +375,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Surat Masuk HMTC
+                            Surat Keluar Internal HMTC
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -383,26 +383,24 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal Surat Masuk</th>
+                                            <th>Tanggal Surat</th>
                                             <th>Nomor Surat</th>
                                             <th>Tujuan Surat</th>
                                             <th>Subject</th>
-                                            <th>Tanggal Acara</th>
                                             <th>Pengaturan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
                                             $i=1;
-                                            foreach ($surat_masuk->result() as $row) {
+                                            foreach ($surat_keluar_internal->result() as $row) {
                                         ?>
                                         <tr>
                                             <td><?php echo $i;?></td>
-                                            <td><?php echo $row->tanggal_masuk; ?></td>
+                                            <td><?php echo $row->tanggal_surat; ?></td>
                                             <td><?php echo $row->no_surat; ?></td>
                                             <td><?php echo $row->tujuan; ?></td>
                                             <td><?php echo $row->subjek; ?></td>
-                                            <td><?php echo $row->tanggal_acara; ?></td>
                                             <td><button>Ubah</button><button>Hapus</button></td> 
                                             
                                         </tr>

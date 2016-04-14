@@ -365,7 +365,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Daftar Surat Masuk HMTC</h1>
+                    <h1 class="page-header">Daftar Inventaris Sekretariat HMTC</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -375,7 +375,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Surat Masuk HMTC
+                            Inventaris Sekretariat HMTC
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -383,26 +383,21 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal Surat Masuk</th>
-                                            <th>Nomor Surat</th>
-                                            <th>Tujuan Surat</th>
-                                            <th>Subject</th>
-                                            <th>Tanggal Acara</th>
-                                            <th>Pengaturan</th>
+                                            <th>Nama Barang</th>
+                                            <th>Jumlah</th>
+                                            <th>Kondisi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
                                             $i=1;
-                                            foreach ($surat_masuk->result() as $row) {
+                                            foreach ($inventaris->result() as $row) {
                                         ?>
                                         <tr>
                                             <td><?php echo $i;?></td>
-                                            <td><?php echo $row->tanggal_masuk; ?></td>
-                                            <td><?php echo $row->no_surat; ?></td>
-                                            <td><?php echo $row->tujuan; ?></td>
-                                            <td><?php echo $row->subjek; ?></td>
-                                            <td><?php echo $row->tanggal_acara; ?></td>
+                                            <td><?php echo $row->nama_barang; ?></td>
+                                            <td><?php echo $row->jumlah; ?></td>
+                                            <td><?php echo $row->kondisi; ?></td>
                                             <td><button>Ubah</button><button>Hapus</button></td> 
                                             
                                         </tr>

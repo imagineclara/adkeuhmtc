@@ -12,6 +12,14 @@ class m_surat extends CI_Model {
     {
         return $this->db->query("select * from surat_masuk");
     }
+    public function getSurat_keluar_internal()
+    {
+        return $this->db->query("select * from surat_keluar_a");
+    }
+    public function getSurat_keluar_eksternal()
+    {
+        return $this->db->query("select * from surat_keluar_b");
+    }
     function insertSurat_masuk($tanggal_masuk, $no_surat, $tujuan, $subjek, $tanggal_acara)
     {
         $data = array(
@@ -22,7 +30,26 @@ class m_surat extends CI_Model {
             'tanggal_acara' => $tanggal_acara
             );
         $this->db->insert('surat_masuk',$data);
-        // $this->db->query("update user set no_telp = '$no' where nrp_user = '$nrp'");
+    }
+    function insertSurat_keluar_a($tanggal_surat, $no_surat, $tujuan, $subjek)
+    {
+        $data = array(
+            'tanggal_surat' => $tanggal_surat,
+            'no_surat'      => $no_surat,
+            'tujuan'        => $tujuan,
+            'subjek'        => $subjek,
+            );
+        $this->db->insert('surat_keluar_a',$data);
+    }
+    function insertSurat_keluar_b($tanggal_surat, $no_surat, $tujuan, $subjek)
+    {
+        $data = array(
+            'tanggal_surat' => $tanggal_surat,
+            'no_surat'      => $no_surat,
+            'tujuan'        => $tujuan,
+            'subjek'        => $subjek,
+            );
+        $this->db->insert('surat_keluar_b',$data);
     }
 }
 
