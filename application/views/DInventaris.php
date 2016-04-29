@@ -386,6 +386,7 @@
                                             <th>Nama Barang</th>
                                             <th>Jumlah</th>
                                             <th>Kondisi</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -13,11 +13,11 @@ class m_inventaris extends CI_Model {
         return $this->db->query("select * from inventaris");
     }
     
-    function insertInventaris($nama_barang, $jumlah, $kondisi)
+    function insertInventaris($nama_barang, $jumlah_barang, $kondisi)
     {
         $data = array(
             'nama_barang'   => $nama_barang,
-            'jumlah'        => $jumlah,
+            'jumlah_barang' => $jumlah_barang,
             'kondisi'       => $kondisi
             );
         $this->db->insert('inventaris',$data);

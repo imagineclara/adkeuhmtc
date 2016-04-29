@@ -57,7 +57,7 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
@@ -104,9 +104,7 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
                 </li>
-                <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -183,9 +181,8 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-tasks -->
+                    /.dropdown-tasks
                 </li>
-                <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -243,9 +240,7 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
+                </li> -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -280,10 +275,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="active" href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Daftar Surat Masuk</a>
+                            <a class="active" href="<?php echo base_url(); ?>"><i class="fa fa-table fa-fw"></i> Daftar Surat Masuk</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Daftar Surat Keluar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo base_url(); ?>surat/keluar/internal">Surat Keluar Internal</a>
@@ -294,7 +289,16 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
+                            <a href="<?php echo base_url(); ?>inventaris/"><i class="fa fa-table fa-fw"></i> Daftar Inventaris</a>
+                        </li>
+                        <li>
+                            <a href="forms"><i class="fa fa-table fa-fw"></i> Daftar Anggota</a>
+                        </li>
+                        <li>
+                            <a href="forms"><i class="fa fa-table fa-fw"></i> Daftar Keuangan</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Input Surat<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo base_url(); ?>surat/masuk/tambah">Surat Masuk</a>
@@ -308,12 +312,12 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>inventaris/"><i class="fa fa-table fa-fw"></i> Daftar Inventaris</a>
+                            <a href="<?php echo base_url(); ?>inventaris/masuk/tambah"><i class="fa fa-edit fa-fw"></i> Input Inventaris</a>
                         </li>
                         <li>
-                            <a href="forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms"><i class="fa fa-edit fa-fw"></i> Upload Berkas</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -338,12 +342,9 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
+                        		</li>
+                        	</li> -->
+                        <!-- <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -353,8 +354,7 @@
                                     <a href="<?php echo base_url(); ?>login">Login Page</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

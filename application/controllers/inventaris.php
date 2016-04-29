@@ -23,83 +23,24 @@ class inventaris extends CI_Controller {
 			$this->load->view('DInventaris', $data);
 		}
 		elseif ($fungsi=='tambah') {
-			$this->load->view('DInventaris');
+			$this->load->view('input_inventaris');
 		}
 	}
-	public function keluar($in_eks='', $tambah='')
-	{
-		if ($in_eks=='internal') {
-			if ($tambah=='tambah') {
-				$this->load->view('surat_keluar_internal');
-			}
-			elseif ($tambah == '') {
-				$data['surat_keluar_internal'] = $this->m_surat->getSurat_keluar_internal();
-				$this->load->view('daftar_keluar_internal', $data);
-			}
-		}
-		elseif ($in_eks=='eksternal') {
-			if ($tambah=='tambah') {
-				$this->load->view('surat_keluar_eksternal');
-			}
-			elseif ($tambah == '') {
-				$data['surat_keluar_eksternal'] = $this->m_surat->getSurat_keluar_eksternal();
-				$this->load->view('daftar_keluar_eksternal', $data);
-			}
-		}
-	}
-	public function submit_surat_masuk()
+	public function submit_inventaris()
 	{
 		//$no = $_POST['no'];
-		$tanggal_masuk = $this->input->post(['tanggal_masuk']);
-		$tanggal_masuk = $_POST['tanggal_masuk'];
-		$no_surat = $_POST['no_surat'];
-		$tujuan = $_POST['tujuan'];
-		$subjek = $_POST['subjek'];
-		$tanggal_acara = $_POST['tanggal_acara'];
-		$state = $this->m_surat->insertSurat_masuk($tanggal_masuk, $no_surat, $tujuan, $subjek, $tanggal_acara);
+		$nama_barang = $this->input->post(['nama_barang']);
+		$jumlah_barang = $_POST['jumlah_barang'];
+		$kondisi = $_POST['kondisi'];
+		$state = $this->m_inventaris->insertInventaris($nama_barang, $jumlah_barang, $kondisi);
 		// $this->
 		if ($state) {
-			redirect('surat');
+			redirect('inventaris');
 		}	
 		else {
-			redirect('surat');
+			redirect('inventaris');
 		}
 
 		// $this->load->view('surat_masuk');
 	}
-	public function submit_surat_keluar_a()
-	{
-		//$no = $_POST['no'];
-		$tanggal_surat = $_POST['tanggal_surat'];
-		$no_surat = $_POST['no_surat'];
-		$tujuan = $_POST['tujuan'];
-		$subjek = $_POST['subjek'];
-		$state = $this->m_surat->insertSurat_keluar_a($tanggal_surat, $no_surat, $tujuan, $subjek);
-		// $this->
-		if ($state) {
-			redirect('surat');
-		}	
-		else {
-			redirect('surat');
-		}
-		// $this->load->view('surat_masuk');
-	}
-	public function submit_surat_keluar_b()
-	{
-		//$no = $_POST['no'];
-		$tanggal_surat = $_POST['tanggal_surat'];
-		$no_surat = $_POST['no_surat'];
-		$tujuan = $_POST['tujuan'];
-		$subjek = $_POST['subjek'];
-		$state = $this->m_surat->insertSurat_keluar_b($tanggal_surat, $no_surat, $tujuan, $subjek);
-		// $this->
-		if ($state) {
-			redirect('surat');
-		}	
-		else {
-			redirect('surat');
-		}
-		// $this->load->view('surat_masuk');
-	}
 }
-//mencoba push ke github
